@@ -31,6 +31,7 @@ io.on('connection', (socket) => {
     // io sẽ gửi đến sự kiện chấp nhận cuộc gọi (callaccepted) cùng với dữ liệu tín hiệu cuộc gọi đến người gọi
     socket.on("answercall", (data) => {
         io.to(data.to).emit("callaccepted", data.signal);
+        io.to(data.to).emit("pedding", {});
     })
 })
 
